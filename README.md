@@ -1,5 +1,5 @@
 gravatarcafe
 -----------
 
-This eosio contract allows users to mail each other.
+This contract allows users to set a display name, image and telegram.
 
