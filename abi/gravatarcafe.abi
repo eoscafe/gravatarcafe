@@ -22,13 +22,22 @@
         {"name":"image_url", "type":"string"},
         {"name":"telegram", "type":"string"}
      ]
+  },{
+     "name": "rmvgravatar",
+     "base": "",
+     "fields": [
+        {"name":"account_name", "type":"name"}
+     ]
   }],
   "actions": [{
       "name": "addgravatar",
       "type": "addgravatar",
       "ricardian_contract": ""
-    }
-  ],
+  },{
+      "name": "rmvgravatar",
+      "type": "rmvgravatar",
+      "ricardian_contract": ""
+  }],
   "tables": [{
       "name": "gravatars",
       "type": "gravatar",

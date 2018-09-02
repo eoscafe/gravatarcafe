@@ -20,6 +20,8 @@ namespace eosio {
                            const string image_url,
                            const string telegram    );
 
+         void rmvgravatar( const account_name account_name);
+
       private:
          struct gravatar {
             account_name account_name;

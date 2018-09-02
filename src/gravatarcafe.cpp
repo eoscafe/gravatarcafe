@@ -44,6 +44,22 @@ void gravatarcafe::addgravatar( const account_name account_name,
     }
 }
 
+void gravatarcafe::rmvgravatar( const account_name account_name )
+{
+    // Ensure authorized to change gravatar of account provided
+    require_auth( account_name );
+
+    // Initialize table and find user's gravatar
+    gravatars gravatars_table( _self, _self );
+    auto existing = gravatars_table.find( account_name );
+
+    eosio_assert(existing != gravatars_table.end(), "Gravatar does not exist for this user");
+
+    // Gravatar exists, delete it
+    gravatars_table.erase( existing );
+}
+
+
 } /// namespace eosio
 
-EOSIO_ABI( eosio::gravatarcafe, (addgravatar) )
+EOSIO_ABI( eosio::gravatarcafe, (addgravatar)(rmvgravatar) )
