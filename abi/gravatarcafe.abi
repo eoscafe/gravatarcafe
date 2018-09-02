@@ -9,7 +9,7 @@
      "base": "",
      "fields": [
         {"name":"account_name", "type":"name"},
-        {"name":"custom_name", "type":"string"},
+        {"name":"display_name", "type":"string"},
         {"name":"image_url", "type":"string"},
         {"name":"telegram", "type":"string"}
      ]
@@ -18,7 +18,7 @@
      "base": "",
      "fields": [
         {"name":"account_name", "type":"name"},
-        {"name":"custom_name", "type":"string"},
+        {"name":"display_name", "type":"string"},
         {"name":"image_url", "type":"string"},
         {"name":"telegram", "type":"string"}
      ]

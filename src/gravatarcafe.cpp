@@ -8,7 +8,7 @@
 namespace eosio {
 
 void gravatarcafe::addgravatar( const account_name account_name,
-                            const string custom_name,
+                            const string display_name,
                             const string image_url,
                             const string telegram )
 {
@@ -17,7 +17,7 @@ void gravatarcafe::addgravatar( const account_name account_name,
 
     eosio_assert( image_url.size() > 0,    "Image URL must not be empty" );
     eosio_assert( image_url.size() < 128,  "Image URL must be shorter than 128 characters" );
-    eosio_assert( custom_name.size() < 32, "Custom name must be shorter than 32 characters" );
+    eosio_assert( display_name.size() < 32, "Custom name must be shorter than 32 characters" );
     eosio_assert( telegram.size() < 128,   "Telegram link must be shorter than 128 characters" );
 
     // Initialize table and find user's gravatar
@@ -29,7 +29,7 @@ void gravatarcafe::addgravatar( const account_name account_name,
         // Gravatar does not exist, create it
         gravatars_table.emplace( account_name, [&]( auto& g ) {
             g.account_name = account_name;
-            g.custom_name = custom_name;
+            g.display_name = display_name;
             g.image_url = image_url;
             g.telegram = telegram;
         });
@@ -37,7 +37,7 @@ void gravatarcafe::addgravatar( const account_name account_name,
         // If account already exists, overwrite it
         gravatars_table.modify( existing, account_name, [&]( auto& g ) {
             g.account_name = account_name;
-            g.custom_name = custom_name;
+            g.display_name = display_name;
             g.image_url = image_url;
             g.telegram = telegram;
         });

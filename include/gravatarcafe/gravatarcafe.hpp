@@ -16,14 +16,14 @@ namespace eosio {
        gravatarcafe( account_name self ) : contract(self) {}
 
          void addgravatar( const account_name account_name,
-                           const string custom_name,
+                           const string display_name,
                            const string image_url,
                            const string telegram    );
 
       private:
          struct gravatar {
             account_name account_name;
-            string       custom_name;
+            string       display_name;
             string       image_url;
             string       telegram;
 
